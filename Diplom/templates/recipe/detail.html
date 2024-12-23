@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+    {% block content %}
+    {% if data.image %}
+        <img src="{{data.image.url}}" width="300" height="200" class="d-inline-block align-top" alt="">
+    {% endif%}
+
+    <h5><b>Описание:</b></h5><p>{{ data.describe}}</p>
+    <h5><b>Состав:</b></h5><p>{{ data.ingredients }}</p>
+
+  <h2>{{data.name}}</h2>
+  <p>{{data.steps}}</p>
+  {% endblock %}

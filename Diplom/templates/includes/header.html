@@ -1,0 +1,47 @@
+{% load static %}
+
+<header>
+      <nav class="navbar navbar-light" style="background-color: lightskyblue">
+        <div class="container ">
+          <a class="navbar-brand" href="{% url 'recipe:index' %}">
+            <img src="{% static 'img/fav/logo-32x32.png' %}" width="30" height="30" class="d-inline-block align-top" alt="">
+            Книга рецептов
+          </a>
+          <ul class="nav  nav-pills">
+            <li class="nav-item">
+              <a class="nav-link active" href="{% url 'recipe:index' %}">
+                Главная
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'recipe:entry_name' %}">
+                Добавить рецепт
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'recipe:index' %}">
+                Каталог рецептов
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'recipe:find_name' %}">
+                Поиск рецепта
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'info:about' %}">
+                Информация о сайте
+              </a>
+            </li>
+            <li class="nav-item">
+
+              <a class="nav-link" href="{% url 'info:rules' %}" >
+                     Наши правила
+              </a>
+
+            </li>
+          </ul>
+        </div>
+      </nav>
+</header>
+

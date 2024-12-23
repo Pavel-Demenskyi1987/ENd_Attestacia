@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load static %}
+
+    {% block content %}
+      <div class="container py-5">
+        <h1>Список рецептов</h1>
+        <!-- Перебираем в цикле все посты -->
+        {% for i in names %}
+        <hr>
+        <article>
+          <ul>
+            <li>
+              {% if i.image%}
+                <img src="{{i.image.url}}" width="300" height="200" class="d-inline-block align-top" alt="">
+              {% endif%}
+            </li>
+            <li>
+              <h4>Блюдо: {{ i.name }}</h4>
+            </li>
+            <li>
+              <h5><b>Описание:</b></h5>{{ i.describe|truncatewords:10 }}
+            </li>
+            <li>
+              <h5><b>Состав:</b></h5>{{ i.ingredients }}
+            </li>
+            <li>
+              <h5><b>Способ приготвления:</b></h5> {{ i.steps|truncatewords:30}}
+            </li>
+          </ul>          
+          <!-- Первые 10 слов -->
+          <p>
+            {{i.text|truncatewords:10}}
+          </p>
+            <a href="{% url 'recipe:detail' i.id %}">Читать полный текст</a>
+
+        </article>
+        {% endfor %}
+
+
+      </div>
+  {% endblock %}
